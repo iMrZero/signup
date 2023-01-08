@@ -3,6 +3,15 @@
   --secondary-color: #01d0e8;
   --txt-clr: #203E5E;
 }
+body::-webkit-scrollbar-track{
+  background-color: #0070ff;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: var(--main-color);
+}
+::-webkit-scrollbar{
+  scroll-behavior: smooth;
+}
 input::placeholder{
   text-transform: capitalize;
   padding-left: 10px;
@@ -68,14 +77,30 @@ a{
     width: 40%;
     position: relative;
 }
+@media (max-width: 767px){
+  .left-box{
+    display: flex;
+    flex-direction: column;
+  }
+}
 .left-box .cst{
   animation: rotatei 3s linear infinite;
+}
+@media (max-width: 767px) {
+  .left-box .cst{
+    animation: none;
+  }
 }
 .left-box .logo{
     color: #fff;
     text-transform: capitalize;
     font-weight: bold;
     display: inline;
+}
+@media (max-width: 767px) {
+  .left-box .logo{
+    margin: -17px 18px;
+  }
 }
 .left-box .txt{
     font-size: 28px;
@@ -94,6 +119,11 @@ a{
     top: 15%;
     animation: bounce 3s linear infinite;
 }
+@media (max-width: 767px) {
+  .left-box .image{
+    display: none;
+  }
+}
 .left-box img{
     width: 100%;
 }
@@ -106,7 +136,13 @@ a{
     padding-top: 55px;
     position: relative;
 }
-
+@media (max-width: 767px) {
+  .right-box{
+    width: 100%;
+    padding-left: calc(55px / 2);
+    padding-right: calc(55px / 2);
+  }
+}
 .right-box .head h2{
     color: var(--txt-clr);
 }
@@ -132,11 +168,23 @@ a{
   padding-top: 15px;
   position: relative;
 }
+@media (max-width: 767px) {
+  .right-box .form ul li{
+    grid-template-columns: 50px 150px;
+    gap: 10px;
+    padding-top: calc(15px / 2);
+  }
+}
 .right-box .form ul li label{
   display: block;
   font-size: 16px;
   text-transform: capitalize;
   color: var(--txt-clr);
+}
+@media (max-width: 767px) {
+  .right-box .form ul li label{
+    padding-right: 10px;
+  }
 }
 .right-box .form ul li input{
   height: 35px;
@@ -151,6 +199,16 @@ a{
 }
 .right-box .form ul li input:focus::placeholder{
   opacity: 0;
+}
+@media (max-width: 767px) {
+  .right-box .form ul li input{
+    height: 30px;
+    padding-left: 5px;
+    margin-left: 15px;
+  }
+  .right-box .form ul li input::placeholder{
+    opacity: 0;
+  }
 }
 .right-box .form .chk{
   padding-left: 36px;
@@ -182,6 +240,10 @@ a{
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  transition: .3s;
+}
+.right-box .form .info-send .smt-btn:hover{
+  background-color: var(--secondary-color);
 }
 .right-box .form .info-send p{
   color: var(--txt-clr);
